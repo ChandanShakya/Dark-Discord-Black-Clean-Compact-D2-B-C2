@@ -48,7 +48,8 @@ div.listItem-3SmSlK:nth-of-type(7),
 .scrollerBase-_bVAAt.none-2-_0dP.scroller-3X7KbA > div.listItem-3SmSlK > .listItemWrapper-3d87LP,
 .tutorialContainer-2jwoiB > .listItem-3SmSlK,
 button#sticker-picker-tab,
-li.channel-1Shao0.container-32HW5s:nth-child(3) {
+li.channel-1Shao0.container-32HW5s:nth-child(3),
+.notice-2HEN-u.colorGreen-2YU4w4{
     display: none !important;
 }
 .theme-dark {
