@@ -1,10 +1,18 @@
 /* ==UserStyle==
-@name           Dark Discord Black Clean Compact D2-B-C2
+@name         Dark Discord Black Clean Compact D2-B-C2
+@version      20230116.03.23
+@namespace    userstyles.world/user/zxy-cc-3ag13
+@description  This user-style improves discord by removing unnecessary nitro prompts and enforces dark-mode.
+
+- Channel bar and top right bar are enforced to become hidden but on hover it appears.
+
+Discord looks cleaner
+@author       zxy-cc-3ag13
+@license      MIT
 @author         ZXY-CC-3ag13
-@description    Improve discord by removing unnecessary nitro prompts and enforces dark-mode
 @namespace      discord.com
-@version        1.0.1
 ==/UserStyle== */
+
 
 @-moz-document domain("discord.com") {
 
