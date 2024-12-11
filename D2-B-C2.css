@@ -73,6 +73,10 @@ Discord looks cleaner
             display: none !important;
         }
 
+    /* Remove container border*/
+        [class^="container_"]{
+            border: 0px;
+        }
 
     /* Set default dark mode color schemes */
         .theme-dark {
@@ -86,5 +90,10 @@ Discord looks cleaner
             --background-accent: #00aff4;
             --background-floating: #000;
             --scrollbar-auto-track: #000;
+        }
+    
+        [class^="scroller_"],
+        [class^="scroller_"] > div > ul > div[class^="wrapper_"]{
+            background-color: #000;
         }
 }
