@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Dark Discord Black Clean Compact D2-B-C2
-@version      20230116.03.23
+@version      20241211.04.01
 @namespace    userstyles.world/user/zxy-cc-3ag13
 @description  This user-style improves discord by removing unnecessary nitro prompts and enforces dark-mode.
 
@@ -13,94 +13,78 @@ Discord looks cleaner
 @namespace      discord.com
 ==/UserStyle== */
 
-
 @-moz-document domain("discord.com") {
 
-    /* Code for top right toolbar*/
-    [class^="toolbar-"] {
-        max-width: 40px;
-        height: 100%;
-    }
+    /* Code for top right toolbar icons */
+        /* Set size when collapsed */
+        [class^="toolbar_"] {
+            max-width: 18px;
+            height: 100%;
+        }
+        /* Set icon when collapsed */
+        [class^="toolbar_"]::before {
+            content: "<";
+            font-size: 24px;
+            margin: 0 8px;
+        }
+        /* Size on hover */
+        [class^="toolbar_"]:hover {
+            max-width: 100vw;
+        }
+        /* Set icon on hover */
+        [class^="toolbar_"]:hover::before {
+            content: ">";
+            font-size: 24px;
+            margin: 0 8px;
+        }
 
-    [class^="toolbar-"]::before {
-        content: "︙";
-        font-size: 24px;
-        margin: 0 8px;
-    }
-
-    /*hover == true*/
-    [class^="toolbar-"]:hover {
-        max-width: 100vw;
-    }
-
-    [class^="toolbar-"]:hover::before {
-        content: "<";
-        font-size: 24px;
-        margin: 0 8px;
-    }
 
     /* Code for channel bar*/
-    [class|=sidebar] {
-        width: 8px !important;
-    }
+        /* Sidebar width on collapse */
+        [class^="sidebar_"] {
+           width: 8px !important;
+        }
+        /* Sidebar width on hover */
+        [class^="sidebar_"]:hover {
+            width: 240px !important;
+        }
+        /*
+            Solved problem to lunos
+            Thanks lunos
+            Sidebar Z-index fix
+        */
+        [class^="panels_"]{
+            z-index: 0;
+        }
 
-    [class|=sidebar]:hover {
-        width: 240px !important;
-    }
+  
+    /* Hiding Unwanted Elements */
+        /* Hide Top right help button */
+        [class^="toolbar_"] > a[class^="anchor_"],
+        /* Hide Add server button */
+        [class^="itemsContainer_"] > div >div:nth-child(4),
+        /* Hide Download button */
+        [class^="itemsContainer_"] > div >div:nth-child(5),
+        /* Hide Explore button */
+        [class^="itemsContainer_"] > div >div:nth-child(2),
+        /* Gift button on chat box */
+        [class^="scrollableContainer_"]  > div > div[class^="buttons_"] > button:nth-child(1)
+        {
+            display: none !important;
+        }
 
-    /*
-        Solved problem to lunos
-        Thanks lunos
-    */
-    .panels-3wFtMD {
-        z-index: 0;
-    }
 
-    /*
-    Code for removing:
-    nitro button, sticker button, help button, download app button,
-    add a server button,explore button, nitro buying in main panel
-*/
-    .buttons-uaqb-5>button:nth-child(1),
-    .buttons-uaqb-5>div:nth-child(3),
-    .toolbar-3_r2xA>a.anchor-1MIwyf.anchorUnderlineOnHover-2qPutX,
-    div.listItem-3SmSlK:nth-of-type(7),
-    .scrollerBase-_bVAAt.none-2-_0dP.scroller-3X7KbA>div.listItem-3SmSlK>.listItemWrapper-3d87LP,
-    .tutorialContainer-2jwoiB>.listItem-3SmSlK,
-    button#sticker-picker-tab,
-    li.channel-1Shao0.container-32HW5s:nth-child(3),
-    .notice-2HEN-u.colorGreen-2YU4w4 {
-        display: none !important;
-    }
-
-    .theme-dark {
-        --text-normal: #ffffff;
-        --scrollbar-auto-thumb: #fff;
-        --channeltextarea-background: #000000;
-        --background-primary: #000;
-        --background-secondary: #000;
-        --background-secondary-alt: #000;
-        --background-tertiary: #000;
-        --background-accent: #00aff4;
-        --background-floating: #000;
-        --scrollbar-auto-track: #000;
-    }
-
-    .autocomplete-3NRXG8,
-    .categoryHeader-OpJ1Ly,
-    .theme-dark .container-2McqkF,
-    div#online-tab,
-    div#all-tab,
-    div#pending-tab,
-    div#blocked-tab,
-    div#add_friend-tab,
-    .focusLock-2tveLW,
-    .theme-dark .root-g14mjS,
-    .theme-dark .autocomplete-3NRXG8 {
-        background-color: #000;
-    }
-
-    .theme-dark .option-ayUoaq:after {
-        background: linear-gradient(90deg, rgba(54, 57, 63, 0), #000000 80%);
-    }
+    /* Set default dark mode color schemes */
+        .theme-dark {
+            --text-normal: #ffffff;
+            --scrollbar-auto-thumb: #fff;
+            --channeltextarea-background: #000000;
+            --background-primary: #000;
+            --background-secondary: #000;
+            --background-secondary-alt: #000;
+            --background-tertiary: #000;
+            --background-accent: #00aff4;
+            --background-floating: #000;
+            --scrollbar-auto-track: #000;
+        }
 }
